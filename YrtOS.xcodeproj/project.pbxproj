@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5367E7FE2BD409D300151171 /* YrtOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E7FD2BD409D300151171 /* YrtOSApp.swift */; };
 		5367E8002BD409D300151171 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E7FF2BD409D300151171 /* ContentView.swift */; };
-		5367E8022BD409D300151171 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E8012BD409D300151171 /* Item.swift */; };
 		5367E8042BD409D400151171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5367E8032BD409D400151171 /* Assets.xcassets */; };
 		5367E8072BD409D400151171 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5367E8062BD409D400151171 /* Preview Assets.xcassets */; };
 		5367E8122BD409D400151171 /* YrtOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E8112BD409D400151171 /* YrtOSTests.swift */; };
@@ -38,7 +37,6 @@
 		5367E7FA2BD409D300151171 /* YrtOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YrtOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5367E7FD2BD409D300151171 /* YrtOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YrtOSApp.swift; sourceTree = "<group>"; };
 		5367E7FF2BD409D300151171 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		5367E8012BD409D300151171 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		5367E8032BD409D400151171 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5367E8062BD409D400151171 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5367E8082BD409D400151171 /* YrtOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YrtOS.entitlements; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 			children = (
 				5367E7FD2BD409D300151171 /* YrtOSApp.swift */,
 				5367E7FF2BD409D300151171 /* ContentView.swift */,
-				5367E8012BD409D300151171 /* Item.swift */,
 				5367E8032BD409D400151171 /* Assets.xcassets */,
 				5367E8082BD409D400151171 /* YrtOS.entitlements */,
 				5367E8052BD409D400151171 /* Preview Content */,
@@ -267,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5367E8002BD409D300151171 /* ContentView.swift in Sources */,
-				5367E8022BD409D300151171 /* Item.swift in Sources */,
 				5367E7FE2BD409D300151171 /* YrtOSApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +431,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"YrtOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -461,6 +458,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"YrtOS/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
