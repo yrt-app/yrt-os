@@ -12,8 +12,10 @@ struct YrtOSApp: App {
     var body: some Scene {
         MenuBarExtra {
             ContentView()
+                .frame(width: 350, height: 500)
         } label: {
-            Image("AppTray").renderingMode(.template)
+            Image("AppTray")
+                .renderingMode(.template)
         }.menuBarExtraStyle(.window)
     }
 }
