@@ -32,19 +32,16 @@ struct ControlBarView: View {
                 count += 1
             } label: {
                 Image(systemName: "speaker.wave.2.fill")
-                    .padding(5)
             }.buttonStyle(.borderless)
             SquareButton {
                 count += 1
             } label: {
                 Image(systemName: "mic.fill")
-                    .padding(5)
             }.buttonStyle(.borderless)
             SquareButton {
                 count += 1
             } label: {
                 Image(systemName: "rectangle.inset.filled.on.rectangle")
-                    .padding(5)
             }.buttonStyle(.borderless)
         }
     }
