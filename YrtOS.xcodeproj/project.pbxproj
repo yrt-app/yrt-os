@@ -14,6 +14,8 @@
 		5367E8122BD409D400151171 /* YrtOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E8112BD409D400151171 /* YrtOSTests.swift */; };
 		5367E81C2BD409D400151171 /* YrtOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E81B2BD409D400151171 /* YrtOSUITests.swift */; };
 		5367E81E2BD409D400151171 /* YrtOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E81D2BD409D400151171 /* YrtOSUITestsLaunchTests.swift */; };
+		53D967902BD7C18100CC3D2A /* ControlBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */; };
+		53DE935D2BD848180028A6F0 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DE935C2BD848180028A6F0 /* ButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		5367E81D2BD409D400151171 /* YrtOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YrtOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5367E82A2BD40BC300151171 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5367E82B2BD40C0700151171 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBarView.swift; sourceTree = "<group>"; };
+		53DE935C2BD848180028A6F0 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +103,8 @@
 		5367E7FC2BD409D300151171 /* YrtOS */ = {
 			isa = PBXGroup;
 			children = (
+				53D9678D2BD7C12D00CC3D2A /* View */,
 				5367E7FD2BD409D300151171 /* YrtOSApp.swift */,
-				5367E7FF2BD409D300151171 /* ContentView.swift */,
 				5367E8032BD409D400151171 /* Assets.xcassets */,
 				5367E8082BD409D400151171 /* YrtOS.entitlements */,
 				5367E8052BD409D400151171 /* Preview Content */,
@@ -131,6 +135,32 @@
 				5367E81D2BD409D400151171 /* YrtOSUITestsLaunchTests.swift */,
 			);
 			path = YrtOSUITests;
+			sourceTree = "<group>";
+		};
+		53D9678D2BD7C12D00CC3D2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				53D967912BD7CE1500CC3D2A /* Styles */,
+				53D9678E2BD7C14600CC3D2A /* Components */,
+				5367E7FF2BD409D300151171 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		53D9678E2BD7C14600CC3D2A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		53D967912BD7CE1500CC3D2A /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				53DE935C2BD848180028A6F0 /* ButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,7 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5367E8002BD409D300151171 /* ContentView.swift in Sources */,
+				53DE935D2BD848180028A6F0 /* ButtonStyle.swift in Sources */,
 				5367E7FE2BD409D300151171 /* YrtOSApp.swift in Sources */,
+				53D967902BD7C18100CC3D2A /* ControlBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +461,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YrtOS/Preview Content\"";
+				DEVELOPMENT_TEAM = WW8CPWP3TA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSUIElement = YES;
@@ -456,6 +489,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YrtOS/Preview Content\"";
+				DEVELOPMENT_TEAM = WW8CPWP3TA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSUIElement = YES;
