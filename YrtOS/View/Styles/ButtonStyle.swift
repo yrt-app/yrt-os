@@ -38,7 +38,7 @@ struct SquareButton<Label: View>: View {
                 .overlay {
                     label().foregroundColor(resolveForeground())
                 }
-                .cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
+                .cornerRadius(3)
                 .onHover { hovering in
                     if hovering {
                         hover = true
