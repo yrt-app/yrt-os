@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ControlBarView: View {
     @Binding var count: Int
-    @State var hover = false
     
     var body: some View {
         HStack {
