@@ -96,5 +96,5 @@ private func resolveBackground(effect: HoverEffect, hover: Bool) -> Color {
 }
 
 private func resolveForeground(effect: HoverEffect, hover: Bool) -> Color {
-    effect == .highlight && hover ? .primary : .secondary
+    hover ? .primary : .secondary
 }
