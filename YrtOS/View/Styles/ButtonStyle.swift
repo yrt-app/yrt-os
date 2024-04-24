@@ -32,12 +32,10 @@ struct SquareButton<Label: View>: View {
     var body: some View {
         Button(action: action) {
             Rectangle()
-                .fill(resolveBackground())
+                .fill(resolveBackground(effect: hoverEffect, hover: hover))
                 .aspectRatio(1, contentMode: .fit)
                 .frame(height: 22)
-                .overlay {
-                    label().foregroundColor(resolveForeground())
-                }
+                .overlay(label().foregroundStyle(resolveForeground(effect: hoverEffect, hover: hover)))
                 .cornerRadius(5)
                 .onHover { hovering in
                     if hovering {
@@ -48,12 +46,55 @@ struct SquareButton<Label: View>: View {
                 }
         }.buttonStyle(.borderless)
     }
+}
+
+struct SquareMenuButton<Label: View, Content: View>: View {
+    let hoverEffect: HoverEffect
+    let content: () -> Content
+    let label: () -> Label
     
-    private func resolveBackground() -> Color {
-        hoverEffect == .fill && hover ? .gray.opacity(0.2) : .clear
+    init(
+        hoverEffect: HoverEffect = .highlight,
+        @ViewBuilder content: @escaping () -> Content,
+        @ViewBuilder label: @escaping () -> Label
+    ) {
+        self.hoverEffect = hoverEffect
+        self.content = content
+        self.label = label
     }
     
-    private func resolveForeground() -> Color {
-        hoverEffect == .highlight && hover ? .primary : .secondary
+    var body: some View {
+        Menu(content: content, label: label)
+            .buttonStyle(MenuButtonStyle(hoverEffect: hoverEffect))
     }
+    
+    struct MenuButtonStyle: ButtonStyle {
+        @State private var hover = false
+        
+        let hoverEffect: HoverEffect
+        
+        func makeBody(configuration: Configuration) -> some View {
+            Rectangle()
+                .fill(resolveBackground(effect: hoverEffect, hover: hover))
+                .aspectRatio(1, contentMode: .fit)
+                .frame(height: 22)
+                .overlay(configuration.label.foregroundStyle(resolveForeground(effect: hoverEffect, hover: hover)))
+                .cornerRadius(5)
+                .onHover { hovering in
+                    if hovering {
+                        hover = true
+                    } else {
+                        hover = false
+                    }
+                }
+        }
+    }
+}
+
+private func resolveBackground(effect: HoverEffect, hover: Bool) -> Color {
+    effect == .fill && hover ? .secondary.opacity(0.3) : .clear
+}
+
+private func resolveForeground(effect: HoverEffect, hover: Bool) -> Color {
+    effect == .highlight && hover ? .primary : .secondary
 }

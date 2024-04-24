@@ -55,8 +55,23 @@ struct ControlBarView: View {
                     .scaledToFit()
                     .frame(height: 22)
             }
-            SquareButton(hoverEffect: .fill) {
-                count += 1
+            SquareMenuButton(hoverEffect: .fill) {
+                Button {
+                    //
+                } label: {
+                    Text("Create new wire")
+                }
+                Button {
+                    //
+                } label: {
+                    Text("Invite friend")
+                }
+                Divider()
+                Button {
+                    //
+                } label: {
+                    Text("Settings")
+                }
             } label: {
                 Image(systemName: "chevron.down")
             }
