@@ -57,18 +57,18 @@ struct ControlBarView: View {
             }
             SquareMenuButton(hoverEffect: .fill) {
                 Button {
-                    //
+                    count += 1
                 } label: {
                     Text("Create new wire")
                 }
                 Button {
-                    //
+                    count += 1
                 } label: {
                     Text("Invite friend")
                 }
                 Divider()
                 Button {
-                    //
+                    count += 1
                 } label: {
                     Text("Settings")
                 }
