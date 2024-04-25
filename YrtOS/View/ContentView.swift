@@ -18,7 +18,7 @@ struct ContentView: View {
                 count += 1
             } label: {
                 Text("Count: \(count)")
-            }.padding()
+            }
             Spacer()
         }
     }

@@ -31,12 +31,7 @@ struct SquareButton<Label: View>: View {
     
     var body: some View {
         Button(action: action) {
-            Rectangle()
-                .fill(resolveBackground(effect: hoverEffect, hover: hover))
-                .aspectRatio(1, contentMode: .fit)
-                .frame(height: 22)
-                .overlay(label().foregroundStyle(resolveForeground(effect: hoverEffect, hover: hover)))
-                .cornerRadius(5)
+            buildContainer(content: label(), hoverEffect: hoverEffect, hover: hover)
                 .onHover { hovering in
                     if hovering {
                         hover = true
@@ -74,12 +69,7 @@ struct SquareMenuButton<Label: View, Content: View>: View {
         let hoverEffect: HoverEffect
         
         func makeBody(configuration: Configuration) -> some View {
-            Rectangle()
-                .fill(resolveBackground(effect: hoverEffect, hover: hover))
-                .aspectRatio(1, contentMode: .fit)
-                .frame(height: 22)
-                .overlay(configuration.label.foregroundStyle(resolveForeground(effect: hoverEffect, hover: hover)))
-                .cornerRadius(5)
+            buildContainer(content: configuration.label, hoverEffect: hoverEffect, hover: hover)
                 .onHover { hovering in
                     if hovering {
                         hover = true
@@ -89,6 +79,19 @@ struct SquareMenuButton<Label: View, Content: View>: View {
                 }
         }
     }
+}
+
+private func buildContainer<Content: View>(
+    content: Content,
+    hoverEffect: HoverEffect,
+    hover: Bool
+) -> some View {
+    Rectangle()
+        .fill(resolveBackground(effect: hoverEffect, hover: hover))
+        .aspectRatio(1, contentMode: .fit)
+        .frame(height: 22)
+        .overlay(content.foregroundStyle(resolveForeground(effect: hoverEffect, hover: hover)))
+        .cornerRadius(5)
 }
 
 private func resolveBackground(effect: HoverEffect, hover: Bool) -> Color {

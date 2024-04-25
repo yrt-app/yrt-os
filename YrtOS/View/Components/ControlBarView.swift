@@ -59,17 +59,20 @@ struct ControlBarView: View {
                 Button {
                     count += 1
                 } label: {
-                    Text("Create new wire")
+                    Image(systemName: "plus")
+                    Text("New Wire")
                 }
                 Button {
                     count += 1
                 } label: {
-                    Text("Invite friend")
+                    Image(systemName: "person.badge.plus")
+                    Text("Invite Friend")
                 }
                 Divider()
                 Button {
                     count += 1
                 } label: {
+                    Image(systemName: "gear")
                     Text("Settings")
                 }
             } label: {
