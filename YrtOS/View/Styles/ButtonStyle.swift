@@ -14,11 +14,11 @@ enum HoverEffect {
 
 struct SquareButton<Label: View>: View {
     @State private var hover = false
-    
+
     let hoverEffect: HoverEffect
     let action: () -> Void
     let label: () -> Label
-    
+
     init(
         hoverEffect: HoverEffect = .highlight,
         action: @escaping () -> Void,
@@ -28,14 +28,15 @@ struct SquareButton<Label: View>: View {
         self.action = action
         self.label = label
     }
-    
+
     var body: some View {
         Button(action: action) {
             buildContainer(content: label(), hoverEffect: hoverEffect, hover: hover)
                 .onHover { hovering in
                     if hovering {
                         hover = true
-                    } else {
+                    }
+                    else {
                         hover = false
                     }
                 }
@@ -47,7 +48,7 @@ struct SquareMenuButton<Label: View, Content: View>: View {
     let hoverEffect: HoverEffect
     let content: () -> Content
     let label: () -> Label
-    
+
     init(
         hoverEffect: HoverEffect = .highlight,
         @ViewBuilder content: @escaping () -> Content,
@@ -57,23 +58,24 @@ struct SquareMenuButton<Label: View, Content: View>: View {
         self.content = content
         self.label = label
     }
-    
+
     var body: some View {
         Menu(content: content, label: label)
             .buttonStyle(MenuButtonStyle(hoverEffect: hoverEffect))
     }
-    
+
     struct MenuButtonStyle: ButtonStyle {
         @State private var hover = false
-        
+
         let hoverEffect: HoverEffect
-        
+
         func makeBody(configuration: Configuration) -> some View {
             buildContainer(content: configuration.label, hoverEffect: hoverEffect, hover: hover)
                 .onHover { hovering in
                     if hovering {
                         hover = true
-                    } else {
+                    }
+                    else {
                         hover = false
                     }
                 }

@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ControlBarView: View {
     @Binding var count: Int
-    
+
     @FocusState var searchFocus
-    
+
     @State var showSearch = false
     @State var searchText = ""
-    
+
     let searchAnimation = Animation.easeInOut(duration: 0.2)
-    
+
     var body: some View {
         HStack {
             if !showSearch {
@@ -26,7 +26,7 @@ struct ControlBarView: View {
             appControls
         }
     }
-    
+
     var logo: some View {
         Image("Logo")
             .renderingMode(.template)
@@ -35,7 +35,7 @@ struct ControlBarView: View {
             .frame(maxWidth: .infinity, maxHeight: 25, alignment: .leading)
             .transition(.offset(x: -500, y: 0))
     }
-    
+
     var sessionControls: some View {
         HStack(spacing: 5) {
             SquareButton {
@@ -57,14 +57,14 @@ struct ControlBarView: View {
         .frame(maxWidth: .infinity, alignment: .center)
         .transition(.offset(x: -400, y: 0))
     }
-    
+
     var appControls: some View {
         HStack {
             search
             menu
         }.frame(maxWidth: .infinity, alignment: .trailing)
     }
-    
+
     @ViewBuilder
     var search: some View {
         SquareButton {
@@ -80,7 +80,7 @@ struct ControlBarView: View {
                 .scaleEffect(showSearch ? 0.7 : 1)
                 .frame(height: 22)
         }.disabled(showSearch)
-        
+
         if showSearch {
             TextField("Search", text: $searchText)
                 .textFieldStyle(.plain)
@@ -101,7 +101,7 @@ struct ControlBarView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     var menu: some View {
         SquareMenuButton(hoverEffect: .fill) {
@@ -133,13 +133,13 @@ struct ControlBarView: View {
 #Preview {
     struct Container: View {
         @State var count = 0
-        
+
         var body: some View {
             ControlBarView(count: $count)
                 .padding()
                 .frame(width: 350)
         }
     }
-    
+
     return Container()
 }

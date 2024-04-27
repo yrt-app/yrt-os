@@ -14,6 +14,7 @@
 		5367E8122BD409D400151171 /* YrtOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E8112BD409D400151171 /* YrtOSTests.swift */; };
 		5367E81C2BD409D400151171 /* YrtOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E81B2BD409D400151171 /* YrtOSUITests.swift */; };
 		5367E81E2BD409D400151171 /* YrtOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E81D2BD409D400151171 /* YrtOSUITestsLaunchTests.swift */; };
+		537EDEDE2BDD34C9004F6F9E /* .swift-format in Resources */ = {isa = PBXBuildFile; fileRef = 537EDEDD2BDD34C9004F6F9E /* .swift-format */; };
 		53D967902BD7C18100CC3D2A /* ControlBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */; };
 		53DE935D2BD848180028A6F0 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DE935C2BD848180028A6F0 /* ButtonStyle.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		5367E81D2BD409D400151171 /* YrtOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YrtOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5367E82A2BD40BC300151171 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5367E82B2BD40C0700151171 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		537EDEDD2BDD34C9004F6F9E /* .swift-format */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-format"; sourceTree = "<group>"; };
 		53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBarView.swift; sourceTree = "<group>"; };
 		53DE935C2BD848180028A6F0 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 			children = (
 				5367E82B2BD40C0700151171 /* README.md */,
 				5367E82A2BD40BC300151171 /* .gitignore */,
+				537EDEDD2BDD34C9004F6F9E /* .swift-format */,
 				5367E7FC2BD409D300151171 /* YrtOS */,
 				5367E8102BD409D400151171 /* YrtOSTests */,
 				5367E81A2BD409D400151171 /* YrtOSUITests */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5367E8072BD409D400151171 /* Preview Assets.xcassets in Resources */,
+				537EDEDE2BDD34C9004F6F9E /* .swift-format in Resources */,
 				5367E8042BD409D400151171 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
