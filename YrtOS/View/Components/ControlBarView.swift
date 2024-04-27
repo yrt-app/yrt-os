@@ -9,19 +9,21 @@ import SwiftUI
 
 struct ControlBarView: View {
     @Binding var count: Int
+    
     @FocusState var searchFocus
-    @State var search = false
+    
+    @State var showSearch = false
     @State var searchText = ""
+    
+    let searchAnimation = Animation.easeInOut(duration: 0.2)
     
     var body: some View {
         HStack {
-            if !search {
-                logo.frame(maxWidth: .infinity, alignment: .leading)
-                    .transition(.offset(x: -500, y: 0))
-                sessionControls.frame(maxWidth: .infinity, alignment: .center)
-                    .transition(.offset(x: -400, y: 0))
+            if !showSearch {
+                logo
+                sessionControls
             }
-            appControls.frame(maxWidth: .infinity, alignment: .trailing)
+            appControls
         }
     }
     
@@ -30,6 +32,8 @@ struct ControlBarView: View {
             .renderingMode(.template)
             .resizable()
             .scaledToFit()
+            .frame(maxWidth: .infinity, maxHeight: 25, alignment: .leading)
+            .transition(.offset(x: -500, y: 0))
     }
     
     var sessionControls: some View {
@@ -50,65 +54,78 @@ struct ControlBarView: View {
                 Image(systemName: "rectangle.inset.filled.on.rectangle")
             }
         }
+        .frame(maxWidth: .infinity, alignment: .center)
+        .transition(.offset(x: -400, y: 0))
     }
     
     var appControls: some View {
         HStack {
-            SquareButton {
-                withAnimation(.easeInOut(duration: 0.2)) {
-                    search.toggle()
+            search
+            menu
+        }.frame(maxWidth: .infinity, alignment: .trailing)
+    }
+    
+    @ViewBuilder
+    var search: some View {
+        SquareButton {
+            withAnimation(searchAnimation) {
+                showSearch.toggle()
+            }
+        } label: {
+            Image(systemName: "magnifyingglass")
+                .resizable()
+                .scaledToFit()
+                .symbolVariant(showSearch ? .none : .fill)
+                .symbolVariant(showSearch ? .none : .circle)
+                .scaleEffect(showSearch ? 0.7 : 1)
+                .frame(height: 22)
+        }.disabled(showSearch)
+        
+        if showSearch {
+            TextField("Search", text: $searchText)
+                .textFieldStyle(.plain)
+                .focused($searchFocus)
+                .transition(.opacity.combined(with: .move(edge: .trailing)))
+            SquareButton(hoverEffect: .fill) {
+                withAnimation(searchAnimation) {
+                    showSearch.toggle()
                 }
             } label: {
-                Image(systemName: "magnifyingglass")
-                    .resizable()
-                    .scaledToFit()
-                    .symbolVariant(search ? .none : .fill)
-                    .symbolVariant(search ? .none : .circle)
-                    .scaleEffect(search ? 0.7 : 1)
-                    .frame(height: 22)
+                Image(systemName: "xmark")
             }
-            if search {
-                TextField("Search", text: $searchText)
-                    .textFieldStyle(.plain)
-                    .focused($searchFocus)
-                    .onAppear {
-                        searchFocus = true
-                    }
-                    .onDisappear {
-                        searchFocus = false
-                    }
-                    .transition(.opacity.combined(with: .move(edge: .trailing)))
-                SquareButton(hoverEffect: .fill) {
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        search.toggle()
-                    }
-                } label: {
-                    Image(systemName: "xmark")
-                }
+            .onAppear {
+                searchFocus = true
             }
-            SquareMenuButton(hoverEffect: .fill) {
-                Button {
-                    count += 1
-                } label: {
-                    Image(systemName: "plus")
-                    Text("New Wire")
-                }
-                Button {
-                    count += 1
-                } label: {
-                    Image(systemName: "person.badge.plus")
-                    Text("Invite Friend")
-                }
-                Divider()
-                Button {
-                    count += 1
-                } label: {
-                    Image(systemName: "gear")
-                    Text("Settings")
-                }
+            .onDisappear {
+                searchFocus = false
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var menu: some View {
+        SquareMenuButton(hoverEffect: .fill) {
+            Button {
+                count += 1
             } label: {
-                Image(systemName: "chevron.down")
+                Image(systemName: "plus")
+                Text("New Wire")
             }
+            Button {
+                count += 1
+            } label: {
+                Image(systemName: "person.badge.plus")
+                Text("Invite Friend")
+            }
+            Divider()
+            Button {
+                count += 1
+            } label: {
+                Image(systemName: "gear")
+                Text("Settings")
+            }
+        } label: {
+            Image(systemName: "chevron.down")
         }
     }
 }
