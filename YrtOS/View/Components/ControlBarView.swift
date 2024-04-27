@@ -9,11 +9,18 @@ import SwiftUI
 
 struct ControlBarView: View {
     @Binding var count: Int
+    @FocusState var searchFocus
+    @State var search = false
+    @State var searchText = ""
     
     var body: some View {
         HStack {
-            logo.frame(maxWidth: .infinity, maxHeight: 25, alignment: .leading)
-            sessionControls.frame(maxWidth: .infinity, alignment: .center)
+            if !search {
+                logo.frame(maxWidth: .infinity, alignment: .leading)
+                    .transition(.offset(x: -500, y: 0))
+                sessionControls.frame(maxWidth: .infinity, alignment: .center)
+                    .transition(.offset(x: -400, y: 0))
+            }
             appControls.frame(maxWidth: .infinity, alignment: .trailing)
         }
     }
@@ -48,35 +55,57 @@ struct ControlBarView: View {
     var appControls: some View {
         HStack {
             SquareButton {
-                count += 1
+                withAnimation {
+                    search.toggle()
+                }
             } label: {
-                Image(systemName: "magnifyingglass.circle.fill")
+                Image(systemName: search ? "magnifyingglass" : "magnifyingglass.circle.fill")
                     .resizable()
                     .scaledToFit()
-                    .frame(height: 22)
+                    .frame(height: search ? 15 : 22)
             }
-            SquareMenuButton(hoverEffect: .fill) {
-                Button {
-                    count += 1
+            if search {
+                TextField("Search", text: $searchText)
+                    .textFieldStyle(.plain)
+                    .focused($searchFocus)
+                    .onAppear {
+                        searchFocus = true
+                    }
+                    .onDisappear {
+                        searchFocus = false
+                    }
+                    .transition(.opacity.combined(with: .move(edge: .trailing)))
+                SquareButton {
+                    withAnimation {
+                        search.toggle()
+                    }
                 } label: {
-                    Image(systemName: "plus")
-                    Text("New Wire")
+                    Image(systemName: "xmark")
                 }
-                Button {
-                    count += 1
+            } else {
+                SquareMenuButton(hoverEffect: .fill) {
+                    Button {
+                        count += 1
+                    } label: {
+                        Image(systemName: "plus")
+                        Text("New Wire")
+                    }
+                    Button {
+                        count += 1
+                    } label: {
+                        Image(systemName: "person.badge.plus")
+                        Text("Invite Friend")
+                    }
+                    Divider()
+                    Button {
+                        count += 1
+                    } label: {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                    }
                 } label: {
-                    Image(systemName: "person.badge.plus")
-                    Text("Invite Friend")
+                    Image(systemName: "chevron.down")
                 }
-                Divider()
-                Button {
-                    count += 1
-                } label: {
-                    Image(systemName: "gear")
-                    Text("Settings")
-                }
-            } label: {
-                Image(systemName: "chevron.down")
             }
         }
     }

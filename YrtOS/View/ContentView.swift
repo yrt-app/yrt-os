@@ -12,7 +12,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            ControlBarView(count: $count)
+            ControlBarView(count: $count).frame(height: 25)
             Spacer()
             Button {
                 count += 1
