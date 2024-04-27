@@ -59,10 +59,13 @@ struct ControlBarView: View {
                     search.toggle()
                 }
             } label: {
-                Image(systemName: search ? "magnifyingglass" : "magnifyingglass.circle.fill")
+                Image(systemName: "magnifyingglass")
                     .resizable()
                     .scaledToFit()
-                    .frame(height: search ? 15 : 22)
+                    .symbolVariant(search ? .none : .fill)
+                    .symbolVariant(search ? .none : .circle)
+                    .scaleEffect(search ? 0.7 : 1)
+                    .frame(height: 22)
             }
             if search {
                 TextField("Search", text: $searchText)
