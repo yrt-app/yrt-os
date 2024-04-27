@@ -78,37 +78,36 @@ struct ControlBarView: View {
                         searchFocus = false
                     }
                     .transition(.opacity.combined(with: .move(edge: .trailing)))
-                SquareButton {
+                SquareButton(hoverEffect: .fill) {
                     withAnimation {
                         search.toggle()
                     }
                 } label: {
                     Image(systemName: "xmark")
                 }
-            } else {
-                SquareMenuButton(hoverEffect: .fill) {
-                    Button {
-                        count += 1
-                    } label: {
-                        Image(systemName: "plus")
-                        Text("New Wire")
-                    }
-                    Button {
-                        count += 1
-                    } label: {
-                        Image(systemName: "person.badge.plus")
-                        Text("Invite Friend")
-                    }
-                    Divider()
-                    Button {
-                        count += 1
-                    } label: {
-                        Image(systemName: "gear")
-                        Text("Settings")
-                    }
+            }
+            SquareMenuButton(hoverEffect: .fill) {
+                Button {
+                    count += 1
                 } label: {
-                    Image(systemName: "chevron.down")
+                    Image(systemName: "plus")
+                    Text("New Wire")
                 }
+                Button {
+                    count += 1
+                } label: {
+                    Image(systemName: "person.badge.plus")
+                    Text("Invite Friend")
+                }
+                Divider()
+                Button {
+                    count += 1
+                } label: {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
+            } label: {
+                Image(systemName: "chevron.down")
             }
         }
     }
