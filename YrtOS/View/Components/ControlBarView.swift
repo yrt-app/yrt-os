@@ -15,7 +15,7 @@ struct ControlBarView: View {
     @State var showSearch = false
     @State var searchText = ""
 
-    let searchAnimation = Animation.easeInOut(duration: 0.2)
+    let searchAnimation = Animation.easeInOut(duration: 0.3)
 
     var body: some View {
         HStack {
@@ -33,7 +33,7 @@ struct ControlBarView: View {
             .resizable()
             .scaledToFit()
             .frame(maxWidth: .infinity, maxHeight: 25, alignment: .leading)
-            .transition(.offset(x: -500, y: 0))
+            .transition(.offset(x: -200, y: 0))
     }
 
     var sessionControls: some View {
@@ -55,7 +55,7 @@ struct ControlBarView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
-        .transition(.offset(x: -400, y: 0))
+        .transition(.offset(x: -500, y: 0))
     }
 
     var appControls: some View {
@@ -72,19 +72,16 @@ struct ControlBarView: View {
                 showSearch.toggle()
             }
         } label: {
-            let icon = Image(systemName: "magnifyingglass")
+            let foreground = showSearch ? AnyShapeStyle(.secondary) : AnyShapeStyle(.opacity(1))
+            
+            Image(systemName: "magnifyingglass")
                 .resizable()
                 .scaledToFit()
                 .symbolVariant(showSearch ? .none : .fill)
                 .symbolVariant(showSearch ? .none : .circle)
+                .foregroundStyle(foreground)
                 .scaleEffect(showSearch ? 0.7 : 1)
                 .frame(height: 22)
-            
-            if showSearch {
-                icon.foregroundStyle(.secondary)
-            } else {
-                icon
-            }
         }.disabled(showSearch)
 
         if showSearch {
