@@ -55,7 +55,7 @@ struct ControlBarView: View {
     var appControls: some View {
         HStack {
             SquareButton {
-                withAnimation {
+                withAnimation(.easeInOut(duration: 0.2)) {
                     search.toggle()
                 }
             } label: {
@@ -79,7 +79,7 @@ struct ControlBarView: View {
                     }
                     .transition(.opacity.combined(with: .move(edge: .trailing)))
                 SquareButton(hoverEffect: .fill) {
-                    withAnimation {
+                    withAnimation(.easeInOut(duration: 0.2)) {
                         search.toggle()
                     }
                 } label: {
