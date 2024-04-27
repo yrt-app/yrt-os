@@ -72,13 +72,19 @@ struct ControlBarView: View {
                 showSearch.toggle()
             }
         } label: {
-            Image(systemName: "magnifyingglass")
+            let icon = Image(systemName: "magnifyingglass")
                 .resizable()
                 .scaledToFit()
                 .symbolVariant(showSearch ? .none : .fill)
                 .symbolVariant(showSearch ? .none : .circle)
                 .scaleEffect(showSearch ? 0.7 : 1)
                 .frame(height: 22)
+            
+            if showSearch {
+                icon.foregroundStyle(.secondary)
+            } else {
+                icon
+            }
         }.disabled(showSearch)
 
         if showSearch {
