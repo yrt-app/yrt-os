@@ -55,7 +55,7 @@ struct ControlBarView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .center)
-        .transition(.offset(x: -500, y: 0))
+        .transition(.offset(x: -300, y: 0))
     }
 
     var appControls: some View {
@@ -73,7 +73,7 @@ struct ControlBarView: View {
             }
         } label: {
             let foreground = showSearch ? AnyShapeStyle(.secondary) : AnyShapeStyle(.opacity(1))
-            
+
             Image(systemName: "magnifyingglass")
                 .resizable()
                 .scaledToFit()
@@ -89,7 +89,7 @@ struct ControlBarView: View {
                 .textFieldStyle(.plain)
                 .focused($searchFocus)
                 .transition(.opacity.combined(with: .move(edge: .trailing)))
-            SquareButton(hoverEffect: .fill) {
+            CircleButton(hoverEffect: .fill) {
                 withAnimation(searchAnimation) {
                     showSearch.toggle()
                 }

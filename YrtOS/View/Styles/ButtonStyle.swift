@@ -31,15 +31,55 @@ struct SquareButton<Label: View>: View {
 
     var body: some View {
         Button(action: action) {
-            buildContainer(content: label(), hoverEffect: hoverEffect, hover: hover)
-                .onHover { hovering in
-                    if hovering {
-                        hover = true
-                    }
-                    else {
-                        hover = false
-                    }
+            buildContainer(
+                shape: Rectangle(),
+                content: label(),
+                hoverEffect: hoverEffect,
+                hover: hover
+            ).onHover { hovering in
+                if hovering {
+                    hover = true
                 }
+                else {
+                    hover = false
+                }
+            }
+        }.buttonStyle(.borderless)
+    }
+}
+
+struct CircleButton<Label: View>: View {
+    @State private var hover = false
+
+    let hoverEffect: HoverEffect
+    let action: () -> Void
+    let label: () -> Label
+
+    init(
+        hoverEffect: HoverEffect = .highlight,
+        action: @escaping () -> Void,
+        @ViewBuilder label: @escaping () -> Label
+    ) {
+        self.hoverEffect = hoverEffect
+        self.action = action
+        self.label = label
+    }
+
+    var body: some View {
+        Button(action: action) {
+            buildContainer(
+                shape: Circle(),
+                content: label(),
+                hoverEffect: hoverEffect,
+                hover: hover
+            ).onHover { hovering in
+                if hovering {
+                    hover = true
+                }
+                else {
+                    hover = false
+                }
+            }
         }.buttonStyle(.borderless)
     }
 }
@@ -70,25 +110,30 @@ struct SquareMenuButton<Label: View, Content: View>: View {
         let hoverEffect: HoverEffect
 
         func makeBody(configuration: Configuration) -> some View {
-            buildContainer(content: configuration.label, hoverEffect: hoverEffect, hover: hover)
-                .onHover { hovering in
-                    if hovering {
-                        hover = true
-                    }
-                    else {
-                        hover = false
-                    }
+            buildContainer(
+                shape: Rectangle(),
+                content: configuration.label,
+                hoverEffect: hoverEffect,
+                hover: hover
+            ).onHover { hovering in
+                if hovering {
+                    hover = true
                 }
+                else {
+                    hover = false
+                }
+            }
         }
     }
 }
 
-private func buildContainer<Content: View>(
+private func buildContainer<Background: Shape, Content: View>(
+    shape: Background,
     content: Content,
     hoverEffect: HoverEffect,
     hover: Bool
 ) -> some View {
-    Rectangle()
+    shape
         .fill(resolveBackground(effect: hoverEffect, hover: hover))
         .aspectRatio(1, contentMode: .fit)
         .frame(height: 22)
