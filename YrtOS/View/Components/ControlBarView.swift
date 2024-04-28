@@ -42,17 +42,17 @@ struct ControlBarView: View {
                 count += 1
             } label: {
                 Image(systemName: "speaker.wave.2.fill")
-            }
+            }.keyboardShortcut("s")
             SquareButton {
                 count += 1
             } label: {
                 Image(systemName: "mic.fill")
-            }
+            }.keyboardShortcut("m")
             SquareButton {
                 count += 1
             } label: {
                 Image(systemName: "rectangle.inset.filled.on.rectangle")
-            }
+            }.keyboardShortcut("v")
         }
         .frame(maxWidth: .infinity, alignment: .center)
         .transition(.offset(x: -300, y: 0))
@@ -82,7 +82,9 @@ struct ControlBarView: View {
                 .foregroundStyle(foreground)
                 .scaleEffect(showSearch ? 0.7 : 1)
                 .frame(height: 22)
-        }.disabled(showSearch)
+        }
+        .keyboardShortcut("k")
+        .disabled(showSearch)
 
         if showSearch {
             TextField("Search", text: $searchText)
@@ -96,6 +98,7 @@ struct ControlBarView: View {
             } label: {
                 Image(systemName: "xmark")
             }
+            .keyboardShortcut(.cancelAction)
             .onAppear {
                 searchFocus = true
             }
