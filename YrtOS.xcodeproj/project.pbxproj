@@ -10,6 +10,7 @@
 		53299D4D2BDE6C6D00417F6D /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 53299D4C2BDE6C6D00417F6D /* HotKey */; };
 		53299D502BDE724800417F6D /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 53299D4F2BDE724800417F6D /* MenuBarExtraAccess */; };
 		53299D542BDE7D2300417F6D /* WindowHotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53299D532BDE7D2300417F6D /* WindowHotKey.swift */; };
+		53299D562BDEBEFE00417F6D /* WireListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53299D552BDEBEFE00417F6D /* WireListItemView.swift */; };
 		5367E7FE2BD409D300151171 /* YrtOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E7FD2BD409D300151171 /* YrtOSApp.swift */; };
 		5367E8002BD409D300151171 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E7FF2BD409D300151171 /* ContentView.swift */; };
 		5367E8042BD409D400151171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5367E8032BD409D400151171 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		53299D532BDE7D2300417F6D /* WindowHotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowHotKey.swift; sourceTree = "<group>"; };
+		53299D552BDEBEFE00417F6D /* WireListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireListItemView.swift; sourceTree = "<group>"; };
 		5367E7FA2BD409D300151171 /* YrtOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YrtOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5367E7FD2BD409D300151171 /* YrtOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YrtOSApp.swift; sourceTree = "<group>"; };
 		5367E7FF2BD409D300151171 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */,
+				53299D552BDEBEFE00417F6D /* WireListItemView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				5367E8002BD409D300151171 /* ContentView.swift in Sources */,
 				53DE935D2BD848180028A6F0 /* ButtonStyle.swift in Sources */,
 				5367E7FE2BD409D300151171 /* YrtOSApp.swift in Sources */,
+				53299D562BDEBEFE00417F6D /* WireListItemView.swift in Sources */,
 				53299D542BDE7D2300417F6D /* WindowHotKey.swift in Sources */,
 				53D967902BD7C18100CC3D2A /* ControlBarView.swift in Sources */,
 			);

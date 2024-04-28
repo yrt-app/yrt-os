@@ -1,0 +1,98 @@
+//
+//  WireListItem.swift
+//  YrtOS
+//
+//  Created by Lorenz Simon on 28.04.24.
+//
+
+import SwiftUI
+
+struct WireListItemView: View {
+    @State var showControls = false
+    
+    let emoij: Character
+    let description: String
+    let onlineCount: Int
+    
+    var body: some View {
+        HStack {
+            avatar
+            content
+            Spacer()
+            if showControls {
+                controls
+            }
+            link
+        }
+        .frame(height: 50)
+        .background {
+            if showControls {
+                RoundedRectangle(cornerRadius: 5)
+                    .fill(.secondary.opacity(0.2))
+                    .containerRelativeFrame(.horizontal) { lenth, axis in
+                        lenth - 10
+                    }
+            }
+        }
+        .onHover { hovering in
+            if hovering {
+                showControls = true
+            } else {
+                showControls = false
+            }
+        }
+    }
+    
+    var avatar: some View {
+        RoundedRectangle(cornerRadius: 5)
+            .fill(.secondary.opacity(0.2))
+            .strokeBorder(.secondary.opacity(0.3))
+            .aspectRatio(1, contentMode: .fit)
+            .frame(height: 35)
+            .overlay {
+                Text(String(emoij)).font(.title)
+            }
+    }
+    
+    var content: some View {
+        VStack(alignment: .leading) {
+            Text(description)
+                .lineLimit(1)
+            Text("\(String(onlineCount)) online")
+                .font(.footnote)
+                .foregroundStyle(.green)
+        }
+    }
+    
+    @ViewBuilder
+    var controls: some View {
+        CircleButton {
+            //
+        } label: {
+            Image(systemName: "speaker.wave.2.fill")
+        }
+        CircleButton {
+            //
+        } label: {
+            Image(systemName: "mic.fill")
+        }
+    }
+    
+    var link: some View {
+        CircleButton(hoverEffect: .fill) {
+            //
+        } label: {
+            Image(systemName: "chevron.right")
+        }
+    }
+}
+
+#Preview {
+    WireListItemView(
+        emoij: "🤙",
+        description: "Team X Hangout",
+        onlineCount: 4
+    )
+    .padding()
+    .frame(width: 350)
+}

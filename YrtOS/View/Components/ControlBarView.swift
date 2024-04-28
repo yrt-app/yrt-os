@@ -15,7 +15,7 @@ struct ControlBarView: View {
     @State var showSearch = false
     @State var searchText = ""
 
-    let searchAnimation = Animation.easeInOut(duration: 0.3)
+    let searchAnimation = Animation.easeInOut(duration: 0.25)
 
     var body: some View {
         HStack {
@@ -90,6 +90,11 @@ struct ControlBarView: View {
             TextField("Search", text: $searchText)
                 .textFieldStyle(.plain)
                 .focused($searchFocus)
+                .onSubmit {
+                    withAnimation(searchAnimation) {
+                        showSearch.toggle()
+                    }
+                }
                 .transition(.opacity.combined(with: .move(edge: .trailing)))
             CircleButton(hoverEffect: .fill) {
                 withAnimation(searchAnimation) {

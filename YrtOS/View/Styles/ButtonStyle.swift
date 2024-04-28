@@ -142,7 +142,7 @@ private func buildContainer<Background: Shape, Content: View>(
 }
 
 private func resolveBackground(effect: HoverEffect, hover: Bool) -> Color {
-    effect == .fill && hover ? .secondary.opacity(0.3) : .clear
+    effect == .fill && hover ? .secondary.opacity(0.5) : .clear
 }
 
 private func resolveForeground(effect: HoverEffect, hover: Bool) -> Color {

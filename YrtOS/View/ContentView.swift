@@ -14,11 +14,11 @@ struct ContentView: View {
         VStack {
             ControlBarView(count: $count).frame(height: 25)
             Spacer()
-            Button {
-                count += 1
-            } label: {
-                Text("Count: \(count)")
-            }
+            WireListItemView(
+                emoij: "🤙",
+                description: "Team X Hangout",
+                onlineCount: 4
+            )
             Spacer()
         }
     }
