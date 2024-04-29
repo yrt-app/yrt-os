@@ -9,9 +9,9 @@ import SwiftUI
 
 struct WireListItemView: View {
     @State var showControls = false
-    
+
     let wireSummary: WireSummary
-    
+
     var body: some View {
         HStack {
             avatar
@@ -34,12 +34,13 @@ struct WireListItemView: View {
         .onHover { hovering in
             if hovering {
                 showControls = true
-            } else {
+            }
+            else {
                 showControls = false
             }
         }
     }
-    
+
     var avatar: some View {
         RoundedRectangle(cornerRadius: 5)
             .fill(.secondary.opacity(0.2))
@@ -51,25 +52,28 @@ struct WireListItemView: View {
                 Text(String(wireSummary.emoji)).font(.title)
             }
     }
-    
+
     var content: some View {
         VStack(alignment: .leading) {
             Text(wireSummary.description)
                 .lineLimit(1)
-            
-            let onlineInfo = if wireSummary.onlineCount > 0 {
-                Text("\(String(wireSummary.onlineCount)) online")
-                    .foregroundStyle(.green)
-            } else {
-                Text("offline")
-                    .foregroundStyle(.secondary)
-            }
+
+            let onlineInfo =
+                if wireSummary.onlineCount > 0 {
+                    Text("\(String(wireSummary.onlineCount)) online")
+                        .foregroundStyle(.green)
+                }
+                else {
+                    Text("offline")
+                        .foregroundStyle(.secondary)
+                }
+
             onlineInfo
                 .font(.caption)
                 .fontWeight(.medium)
         }
     }
-    
+
     @ViewBuilder
     var controls: some View {
         CircleButton {
@@ -83,7 +87,7 @@ struct WireListItemView: View {
             Image(systemName: "mic.fill")
         }
     }
-    
+
     var link: some View {
         CircleButton(hoverEffect: .fill) {
             //
@@ -100,7 +104,7 @@ struct WireListItemView: View {
         description: "Team X Hangout",
         onlineCount: 4
     )
-    
+
     return WireListItemView(wireSummary: wireSummary)
         .padding()
         .frame(width: 350)

@@ -20,9 +20,9 @@ class WireSummaryStore: ObservableObject {
             emoji: "💻",
             description: "Focus Group",
             onlineCount: 1
-        )
+        ),
     ]
-    
+
     @Published var availableWires = [
         WireSummary(
             id: UUID().uuidString,
@@ -71,6 +71,6 @@ class WireSummaryStore: ObservableObject {
             emoji: "🚀",
             description: "StartUP Founders Club",
             onlineCount: 0
-        )
+        ),
     ]
 }

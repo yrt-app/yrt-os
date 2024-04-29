@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WireListView: View {
     @StateObject var wireStore = WireSummaryStore()
-    
+
     var body: some View {
         VStack(spacing: 10) {
             if wireStore.connectedWires.count > 0 {
@@ -18,7 +18,7 @@ struct WireListView: View {
             available
         }
     }
-    
+
     @ViewBuilder
     var connected: some View {
         VStack(spacing: 5) {
@@ -41,7 +41,7 @@ struct WireListView: View {
         }
         Divider()
     }
-    
+
     @ViewBuilder
     var available: some View {
         HStack {
@@ -58,8 +58,8 @@ struct WireListView: View {
     }
 }
 
-private extension WireSummary {
-    func toWireListItemView() -> some View {
+extension WireSummary {
+    fileprivate func toWireListItemView() -> some View {
         WireListItemView(wireSummary: self)
             .scrollTransition { content, phase in
                 content.opacity(phase.isIdentity ? 1 : 0)
