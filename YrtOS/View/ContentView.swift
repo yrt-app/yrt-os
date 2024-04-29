@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var count = 0
-
     var body: some View {
-        VStack {
-            ControlBarView(count: $count).frame(height: 25)
-            Spacer()
-            WireListItemView(
-                emoij: "🤙",
-                description: "Team X Hangout",
-                onlineCount: 4
-            )
+        VStack(spacing: 0) {
+            ControlBarView()
+                .frame(height: 25)
+                .padding()
+            ScrollView {
+                WireListView().padding(.horizontal)
+            }.scrollIndicators(.hidden)
             Spacer()
         }
     }
@@ -26,6 +23,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .padding()
         .frame(width: 350, height: 500)
 }

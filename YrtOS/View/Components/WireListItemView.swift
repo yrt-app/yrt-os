@@ -10,9 +10,7 @@ import SwiftUI
 struct WireListItemView: View {
     @State var showControls = false
     
-    let emoij: Character
-    let description: String
-    let onlineCount: Int
+    let wireSummary: WireSummary
     
     var body: some View {
         HStack {
@@ -24,7 +22,6 @@ struct WireListItemView: View {
             }
             link
         }
-        .frame(height: 50)
         .background {
             if showControls {
                 RoundedRectangle(cornerRadius: 5)
@@ -49,18 +46,27 @@ struct WireListItemView: View {
             .strokeBorder(.secondary.opacity(0.3))
             .aspectRatio(1, contentMode: .fit)
             .frame(height: 35)
+            .padding(.vertical, 5)
             .overlay {
-                Text(String(emoij)).font(.title)
+                Text(String(wireSummary.emoji)).font(.title)
             }
     }
     
     var content: some View {
         VStack(alignment: .leading) {
-            Text(description)
+            Text(wireSummary.description)
                 .lineLimit(1)
-            Text("\(String(onlineCount)) online")
-                .font(.footnote)
-                .foregroundStyle(.green)
+            
+            let onlineInfo = if wireSummary.onlineCount > 0 {
+                Text("\(String(wireSummary.onlineCount)) online")
+                    .foregroundStyle(.green)
+            } else {
+                Text("offline")
+                    .foregroundStyle(.secondary)
+            }
+            onlineInfo
+                .font(.caption)
+                .fontWeight(.medium)
         }
     }
     
@@ -88,11 +94,14 @@ struct WireListItemView: View {
 }
 
 #Preview {
-    WireListItemView(
-        emoij: "🤙",
+    let wireSummary = WireSummary(
+        id: UUID().uuidString,
+        emoji: "🤙",
         description: "Team X Hangout",
         onlineCount: 4
     )
-    .padding()
-    .frame(width: 350)
+    
+    return WireListItemView(wireSummary: wireSummary)
+        .padding()
+        .frame(width: 350)
 }

@@ -21,6 +21,9 @@
 		537EDEDE2BDD34C9004F6F9E /* .swift-format in Resources */ = {isa = PBXBuildFile; fileRef = 537EDEDD2BDD34C9004F6F9E /* .swift-format */; };
 		53D967902BD7C18100CC3D2A /* ControlBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */; };
 		53DE935D2BD848180028A6F0 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DE935C2BD848180028A6F0 /* ButtonStyle.swift */; };
+		53EC3B2B2BDFE2E4008D6927 /* WireListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC3B2A2BDFE2E4008D6927 /* WireListView.swift */; };
+		53EC3B302BDFE697008D6927 /* WireSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC3B2F2BDFE697008D6927 /* WireSummary.swift */; };
+		53EC3B322BDFEE45008D6927 /* WireSummaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC3B312BDFEE45008D6927 /* WireSummaryStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		537EDEDD2BDD34C9004F6F9E /* .swift-format */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-format"; sourceTree = "<group>"; };
 		53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBarView.swift; sourceTree = "<group>"; };
 		53DE935C2BD848180028A6F0 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		53EC3B2A2BDFE2E4008D6927 /* WireListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireListView.swift; sourceTree = "<group>"; };
+		53EC3B2F2BDFE697008D6927 /* WireSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireSummary.swift; sourceTree = "<group>"; };
+		53EC3B312BDFEE45008D6927 /* WireSummaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireSummaryStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				53299D532BDE7D2300417F6D /* WindowHotKey.swift */,
+				53EC3B312BDFEE45008D6927 /* WireSummaryStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 		5367E7FC2BD409D300151171 /* YrtOS */ = {
 			isa = PBXGroup;
 			children = (
+				53EC3B2E2BDFE67E008D6927 /* Domain */,
 				53D9678D2BD7C12D00CC3D2A /* View */,
 				5367E7FD2BD409D300151171 /* YrtOSApp.swift */,
 				5367E8032BD409D400151171 /* Assets.xcassets */,
@@ -172,6 +180,7 @@
 			children = (
 				53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */,
 				53299D552BDEBEFE00417F6D /* WireListItemView.swift */,
+				53EC3B2A2BDFE2E4008D6927 /* WireListView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -182,6 +191,14 @@
 				53DE935C2BD848180028A6F0 /* ButtonStyle.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		53EC3B2E2BDFE67E008D6927 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				53EC3B2F2BDFE697008D6927 /* WireSummary.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,8 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53EC3B322BDFEE45008D6927 /* WireSummaryStore.swift in Sources */,
 				5367E8002BD409D300151171 /* ContentView.swift in Sources */,
+				53EC3B302BDFE697008D6927 /* WireSummary.swift in Sources */,
 				53DE935D2BD848180028A6F0 /* ButtonStyle.swift in Sources */,
+				53EC3B2B2BDFE2E4008D6927 /* WireListView.swift in Sources */,
 				5367E7FE2BD409D300151171 /* YrtOSApp.swift in Sources */,
 				53299D562BDEBEFE00417F6D /* WireListItemView.swift in Sources */,
 				53299D542BDE7D2300417F6D /* WindowHotKey.swift in Sources */,

@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct ControlBarView: View {
-    @Binding var count: Int
-
     @FocusState var searchFocus
 
     @State var showSearch = false
@@ -39,17 +37,17 @@ struct ControlBarView: View {
     var sessionControls: some View {
         HStack(spacing: 5) {
             SquareButton {
-                count += 1
+                //
             } label: {
                 Image(systemName: "speaker.wave.2.fill")
             }.keyboardShortcut("s")
             SquareButton {
-                count += 1
+                //
             } label: {
                 Image(systemName: "mic.fill")
             }.keyboardShortcut("m")
             SquareButton {
-                count += 1
+                //
             } label: {
                 Image(systemName: "rectangle.inset.filled.on.rectangle")
             }.keyboardShortcut("v")
@@ -117,20 +115,20 @@ struct ControlBarView: View {
     var menu: some View {
         SquareMenuButton(hoverEffect: .fill) {
             Button {
-                count += 1
+                //
             } label: {
                 Image(systemName: "plus")
                 Text("New Wire")
             }
             Button {
-                count += 1
+                //
             } label: {
                 Image(systemName: "person.badge.plus")
                 Text("Invite Friend")
             }
             Divider()
             Button {
-                count += 1
+                //
             } label: {
                 Image(systemName: "gear")
                 Text("Settings")
@@ -142,15 +140,7 @@ struct ControlBarView: View {
 }
 
 #Preview {
-    struct Container: View {
-        @State var count = 0
-
-        var body: some View {
-            ControlBarView(count: $count)
-                .padding()
-                .frame(width: 350)
-        }
-    }
-
-    return Container()
+    ControlBarView()
+        .padding()
+        .frame(width: 350)
 }
