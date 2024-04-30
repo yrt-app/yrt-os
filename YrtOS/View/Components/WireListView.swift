@@ -15,6 +15,7 @@ struct WireListView: View {
             if wireStore.connectedWires.count > 0 {
                 connected
             }
+            Divider()
             available
         }
     }
@@ -40,7 +41,6 @@ struct WireListView: View {
                 }
             }
         }
-        Divider()
     }
 
     @ViewBuilder
