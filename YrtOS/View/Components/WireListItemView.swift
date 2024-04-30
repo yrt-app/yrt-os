@@ -43,8 +43,8 @@ struct WireListItemView: View {
 
     var avatar: some View {
         RoundedRectangle(cornerRadius: 5)
-            .fill(.secondary.opacity(0.2))
-            .strokeBorder(.secondary.opacity(0.3))
+            .fill(.secondary.opacity(0.1))
+            .strokeBorder(.secondary.opacity(0.2))
             .aspectRatio(1, contentMode: .fit)
             .frame(height: 35)
             .padding(.vertical, 5)

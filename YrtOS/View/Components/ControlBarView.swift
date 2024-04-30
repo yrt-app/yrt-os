@@ -18,7 +18,7 @@ struct ControlBarView: View {
     var body: some View {
         HStack {
             if !showSearch {
-                logo
+                logo.foregroundStyle(.secondary)
                 sessionControls
             }
             appControls

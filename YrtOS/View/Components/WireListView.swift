@@ -28,8 +28,9 @@ struct WireListView: View {
                     .background {
                         Circle().fill(.green)
                     }
-                Text("CONNECTED")
+                Text("Connected")
                     .font(.caption)
+                    .textCase(.uppercase)
                     .fontWeight(.medium)
                 Spacer()
             }
@@ -45,9 +46,10 @@ struct WireListView: View {
     @ViewBuilder
     var available: some View {
         HStack {
-            Text("Wires")
-                .font(.title2)
-                .fontWeight(.bold)
+            Text("􀙫 Wires")
+                .font(.title3)
+                .textCase(.uppercase)
+                .fontWeight(.medium)
             Spacer()
         }
         LazyVStack(spacing: 0) {
