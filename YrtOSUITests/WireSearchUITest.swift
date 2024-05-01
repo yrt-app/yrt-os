@@ -6,8 +6,11 @@
 //
 
 import XCTest
+import YrtOS
 
 final class WireSearchUITest: XCTestCase {
+    typealias AID = AccessibilityIdentifier.ControlBarView
+    
     let app = XCUIApplication()
 
     override func setUpWithError() throws {
@@ -17,17 +20,17 @@ final class WireSearchUITest: XCTestCase {
     }
 
     func testTransitionToSearchField() throws {
-        let searchButton = app.buttons["Search"]
+        let searchButton = app.buttons[AID.SEARCH_SHOW_BUTTON]
         XCTAssert(searchButton.exists)
         XCTAssert(searchButton.isEnabled)
         searchButton.click()
 
-        let textField = app.textFields["Search"]
+        let textField = app.textFields[AID.SEARCH_TEXT_FIELD]
         XCTAssert(textField.exists)
         XCTAssert(!searchButton.isEnabled)
         textField.typeText("test")
 
-        let closeButton = app.buttons["Close"]
+        let closeButton = app.buttons[AID.SEARCH_HIDE_BUTTON]
         XCTAssert(closeButton.exists)
         closeButton.click()
 

@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ControlBarView: View {
+    typealias AID = AccessibilityIdentifier.ControlBarView
+    
+    let searchAnimation = Animation.easeInOut(duration: 0.25)
+    
     @FocusState var searchFocus
 
     @State var showSearch = false
     @State var searchText = ""
-
-    let searchAnimation = Animation.easeInOut(duration: 0.25)
 
     var body: some View {
         HStack {
@@ -81,11 +83,13 @@ struct ControlBarView: View {
                 .scaleEffect(showSearch ? 0.7 : 1)
                 .frame(height: 22)
         }
+        .accessibilityIdentifier(AID.SEARCH_SHOW_BUTTON)
         .keyboardShortcut("k")
         .disabled(showSearch)
 
         if showSearch {
             TextField("Search", text: $searchText)
+                .accessibilityIdentifier(AID.SEARCH_TEXT_FIELD)
                 .textFieldStyle(.plain)
                 .focused($searchFocus)
                 .onSubmit {
@@ -101,6 +105,7 @@ struct ControlBarView: View {
             } label: {
                 Image(systemName: "xmark")
             }
+            .accessibilityIdentifier(AID.SEARCH_HIDE_BUTTON)
             .keyboardShortcut(.cancelAction)
             .onAppear {
                 searchFocus = true

@@ -18,6 +18,8 @@
 		5367E8122BD409D400151171 /* YrtOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E8112BD409D400151171 /* YrtOSTests.swift */; };
 		5367E81C2BD409D400151171 /* AppLaunchUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E81B2BD409D400151171 /* AppLaunchUITest.swift */; };
 		537EDEDE2BDD34C9004F6F9E /* .swift-format in Resources */ = {isa = PBXBuildFile; fileRef = 537EDEDD2BDD34C9004F6F9E /* .swift-format */; };
+		53AD634A2BE29C5D00AD9A19 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AD63492BE29C5D00AD9A19 /* AccessibilityIdentifier.swift */; };
+		53AD634B2BE2D38600AD9A19 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AD63492BE29C5D00AD9A19 /* AccessibilityIdentifier.swift */; };
 		53D967902BD7C18100CC3D2A /* ControlBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */; };
 		53DE935D2BD848180028A6F0 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DE935C2BD848180028A6F0 /* ButtonStyle.swift */; };
 		53EC3B2B2BDFE2E4008D6927 /* WireListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC3B2A2BDFE2E4008D6927 /* WireListView.swift */; };
@@ -59,6 +61,7 @@
 		5367E82A2BD40BC300151171 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5367E82B2BD40C0700151171 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		537EDEDD2BDD34C9004F6F9E /* .swift-format */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-format"; sourceTree = "<group>"; };
+		53AD63492BE29C5D00AD9A19 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBarView.swift; sourceTree = "<group>"; };
 		53DE935C2BD848180028A6F0 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		53EC3B2A2BDFE2E4008D6927 /* WireListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireListView.swift; sourceTree = "<group>"; };
@@ -164,9 +167,18 @@
 			path = YrtOSUITests;
 			sourceTree = "<group>";
 		};
+		53AD63482BE29C3900AD9A19 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				53AD63492BE29C5D00AD9A19 /* AccessibilityIdentifier.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		53D9678D2BD7C12D00CC3D2A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				53AD63482BE29C3900AD9A19 /* Utility */,
 				53299D522BDE7D0B00417F6D /* Model */,
 				53D967912BD7CE1500CC3D2A /* Styles */,
 				53D9678E2BD7C14600CC3D2A /* Components */,
@@ -347,6 +359,7 @@
 				53EC3B2B2BDFE2E4008D6927 /* WireListView.swift in Sources */,
 				5367E7FE2BD409D300151171 /* YrtOSApp.swift in Sources */,
 				53299D562BDEBEFE00417F6D /* WireListItemView.swift in Sources */,
+				53AD634A2BE29C5D00AD9A19 /* AccessibilityIdentifier.swift in Sources */,
 				53299D542BDE7D2300417F6D /* WindowHotKey.swift in Sources */,
 				53D967902BD7C18100CC3D2A /* ControlBarView.swift in Sources */,
 			);
@@ -365,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53F87BB52BE2918A005B3A21 /* WireSearchUITest.swift in Sources */,
+				53AD634B2BE2D38600AD9A19 /* AccessibilityIdentifier.swift in Sources */,
 				5367E81C2BD409D400151171 /* AppLaunchUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

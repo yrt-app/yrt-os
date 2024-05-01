@@ -10,9 +10,9 @@ import Foundation
 import HotKey
 
 class WindowHotKey: ObservableObject {
-    @Published var showWindow = false
-
     let hotKey: HotKey
+    
+    @Published var showWindow = false
 
     init(key: Key, modifiers: NSEvent.ModifierFlags) {
         self.hotKey = HotKey(key: key, modifiers: modifiers)

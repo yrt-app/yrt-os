@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct WireListItemView: View {
-    @State var showControls = false
-
     let wireSummary: WireSummary
+    
+    @State var showControls = false
 
     var body: some View {
         HStack {
