@@ -31,14 +31,14 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         snapshots.previews
     }
-    
+
     static var snapshots: PreviewSnapshots<PreviewState> {
         PreviewSnapshots(
             configurations: [
                 .init(
                     name: "Default",
                     state: PreviewState()
-                ),
+                )
             ],
             configure: { _ in
                 ContentView()
@@ -46,6 +46,6 @@ struct ContentView_Previews: PreviewProvider {
             }
         )
     }
-    
+
     struct PreviewState {}
 }

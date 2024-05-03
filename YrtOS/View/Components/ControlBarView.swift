@@ -10,9 +10,9 @@ import SwiftUI
 
 struct ControlBarView: View {
     typealias AID = AccessibilityIdentifier.ControlBarView
-    
+
     let searchAnimation = Animation.easeInOut(duration: 0.25)
-    
+
     @FocusState var searchFocus
 
     @State var showSearch = false
@@ -155,7 +155,7 @@ struct ContentBarView_Previews: PreviewProvider {
     static var previews: some View {
         snapshots.previews
     }
-    
+
     static var snapshots: PreviewSnapshots<Bool> {
         PreviewSnapshots(
             configurations: [

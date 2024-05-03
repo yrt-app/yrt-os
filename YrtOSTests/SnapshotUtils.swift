@@ -16,12 +16,14 @@ extension Snapshotting where Value: SwiftUI.View, Format == NSImage {
         let snapshotting = Snapshotting<NSView, NSImage>
             .image(size: .init(width: size.0, height: size.1))
             .pullback { (view: Value) in
-                let view = NSHostingView(rootView: view.environment(\.colorScheme, userInterfaceStyle.colorScheme))
+                let view = NSHostingView(
+                    rootView: view.environment(\.colorScheme, userInterfaceStyle.colorScheme)
+                )
                 view.wantsLayer = true
                 view.layer?.backgroundColor = NSColor.windowBackgroundColor.cgColor
                 return view
             }
-        
+
         return Snapshotting(
             pathExtension: snapshotting.pathExtension,
             diffing: snapshotting.diffing,
@@ -38,14 +40,14 @@ extension Snapshotting where Value: SwiftUI.View, Format == NSImage {
 
 enum UserInterfaceStyle {
     case light, dark
-    
+
     var colorScheme: ColorScheme {
         switch self {
         case .light: return .light
         case .dark: return .dark
         }
     }
-    
+
     var appearance: NSAppearance {
         switch self {
         case .light: return NSAppearance(named: .aqua)!

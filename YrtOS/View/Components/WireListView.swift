@@ -80,11 +80,11 @@ struct WireListView_Previews: PreviewProvider {
     static var previews: some View {
         snapshots.previews
     }
-    
+
     static var snapshots: PreviewSnapshots<WireSummaryStore> {
         let connected = WireSummaryStore()
         let disconnected = WireSummaryStore(connectedWires: [])
-        
+
         return PreviewSnapshots(
             configurations: [
                 .init(
@@ -94,7 +94,7 @@ struct WireListView_Previews: PreviewProvider {
                 .init(
                     name: "Disconnected",
                     state: disconnected
-                )
+                ),
             ],
             configure: { wireStore in
                 ScrollView {

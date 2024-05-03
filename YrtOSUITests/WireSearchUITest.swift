@@ -10,7 +10,7 @@ import YrtOS
 
 final class WireSearchUITest: XCTestCase {
     typealias AID = AccessibilityIdentifier.ControlBarView
-    
+
     let app = XCUIApplication()
 
     override func setUpWithError() throws {

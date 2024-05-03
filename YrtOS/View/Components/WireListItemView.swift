@@ -115,7 +115,7 @@ struct WireListItemView_Previews: PreviewProvider {
     static var previews: some View {
         snapshots.previews
     }
-    
+
     static var snapshots: PreviewSnapshots<PreviewState> {
         let shortWireSummary = WireSummary(
             id: UUID().uuidString,
@@ -129,7 +129,7 @@ struct WireListItemView_Previews: PreviewProvider {
             description: "Team X Hangout With a Long Description",
             onlineCount: 4
         )
-        
+
         return PreviewSnapshots(
             configurations: [
                 .init(
@@ -171,7 +171,7 @@ struct WireListItemView_Previews: PreviewProvider {
             }
         )
     }
-    
+
     struct PreviewState {
         let wireSummary: WireSummary
         let showControls: Bool
