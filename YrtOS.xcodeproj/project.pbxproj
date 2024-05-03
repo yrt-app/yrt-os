@@ -7,21 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53224AFF2BE4C52F009B3945 /* PreviewSnapshots in Frameworks */ = {isa = PBXBuildFile; productRef = 53224AFE2BE4C52F009B3945 /* PreviewSnapshots */; };
+		53224B012BE4C52F009B3945 /* PreviewSnapshotsTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 53224B002BE4C52F009B3945 /* PreviewSnapshotsTesting */; };
 		53299D4D2BDE6C6D00417F6D /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 53299D4C2BDE6C6D00417F6D /* HotKey */; };
 		53299D502BDE724800417F6D /* MenuBarExtraAccess in Frameworks */ = {isa = PBXBuildFile; productRef = 53299D4F2BDE724800417F6D /* MenuBarExtraAccess */; };
 		53299D542BDE7D2300417F6D /* WindowHotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53299D532BDE7D2300417F6D /* WindowHotKey.swift */; };
 		53299D562BDEBEFE00417F6D /* WireListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53299D552BDEBEFE00417F6D /* WireListItemView.swift */; };
+		533B8F342BE3E8030088881C /* ControlBarViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533B8F332BE3E8030088881C /* ControlBarViewTest.swift */; };
 		5367E7FE2BD409D300151171 /* YrtOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E7FD2BD409D300151171 /* YrtOSApp.swift */; };
 		5367E8002BD409D300151171 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E7FF2BD409D300151171 /* ContentView.swift */; };
 		5367E8042BD409D400151171 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5367E8032BD409D400151171 /* Assets.xcassets */; };
 		5367E8072BD409D400151171 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5367E8062BD409D400151171 /* Preview Assets.xcassets */; };
-		5367E8122BD409D400151171 /* YrtOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E8112BD409D400151171 /* YrtOSTests.swift */; };
 		5367E81C2BD409D400151171 /* AppLaunchUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5367E81B2BD409D400151171 /* AppLaunchUITest.swift */; };
-		537EDEDE2BDD34C9004F6F9E /* .swift-format in Resources */ = {isa = PBXBuildFile; fileRef = 537EDEDD2BDD34C9004F6F9E /* .swift-format */; };
 		53AD634A2BE29C5D00AD9A19 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AD63492BE29C5D00AD9A19 /* AccessibilityIdentifier.swift */; };
 		53AD634B2BE2D38600AD9A19 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53AD63492BE29C5D00AD9A19 /* AccessibilityIdentifier.swift */; };
 		53D967902BD7C18100CC3D2A /* ControlBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */; };
 		53DE935D2BD848180028A6F0 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DE935C2BD848180028A6F0 /* ButtonStyle.swift */; };
+		53EB9A942BE4CD4B00F95118 /* SnapshotUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9A932BE4CD4B00F95118 /* SnapshotUtils.swift */; };
+		53EB9A962BE4D75600F95118 /* WireListItemViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9A952BE4D75600F95118 /* WireListItemViewTest.swift */; };
+		53EB9A982BE4DE7F00F95118 /* WireListViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9A972BE4DE7F00F95118 /* WireListViewTest.swift */; };
+		53EB9A9A2BE4DFC900F95118 /* ContentViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EB9A992BE4DFC900F95118 /* ContentViewTest.swift */; };
 		53EC3B2B2BDFE2E4008D6927 /* WireListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC3B2A2BDFE2E4008D6927 /* WireListView.swift */; };
 		53EC3B302BDFE697008D6927 /* WireSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC3B2F2BDFE697008D6927 /* WireSummary.swift */; };
 		53EC3B322BDFEE45008D6927 /* WireSummaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EC3B312BDFEE45008D6927 /* WireSummaryStore.swift */; };
@@ -48,6 +53,8 @@
 /* Begin PBXFileReference section */
 		53299D532BDE7D2300417F6D /* WindowHotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowHotKey.swift; sourceTree = "<group>"; };
 		53299D552BDEBEFE00417F6D /* WireListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireListItemView.swift; sourceTree = "<group>"; };
+		533B8F332BE3E8030088881C /* ControlBarViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBarViewTest.swift; sourceTree = "<group>"; };
+		535A82BE2BE42B7700EF8AC2 /* YrtOSDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YrtOSDebug.entitlements; sourceTree = "<group>"; };
 		5367E7FA2BD409D300151171 /* YrtOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YrtOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5367E7FD2BD409D300151171 /* YrtOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YrtOSApp.swift; sourceTree = "<group>"; };
 		5367E7FF2BD409D300151171 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,7 +62,6 @@
 		5367E8062BD409D400151171 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5367E8082BD409D400151171 /* YrtOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YrtOS.entitlements; sourceTree = "<group>"; };
 		5367E80D2BD409D400151171 /* YrtOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YrtOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5367E8112BD409D400151171 /* YrtOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YrtOSTests.swift; sourceTree = "<group>"; };
 		5367E8172BD409D400151171 /* YrtOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YrtOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5367E81B2BD409D400151171 /* AppLaunchUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchUITest.swift; sourceTree = "<group>"; };
 		5367E82A2BD40BC300151171 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -64,6 +70,10 @@
 		53AD63492BE29C5D00AD9A19 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		53D9678F2BD7C18100CC3D2A /* ControlBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBarView.swift; sourceTree = "<group>"; };
 		53DE935C2BD848180028A6F0 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		53EB9A932BE4CD4B00F95118 /* SnapshotUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotUtils.swift; sourceTree = "<group>"; };
+		53EB9A952BE4D75600F95118 /* WireListItemViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireListItemViewTest.swift; sourceTree = "<group>"; };
+		53EB9A972BE4DE7F00F95118 /* WireListViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireListViewTest.swift; sourceTree = "<group>"; };
+		53EB9A992BE4DFC900F95118 /* ContentViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTest.swift; sourceTree = "<group>"; };
 		53EC3B2A2BDFE2E4008D6927 /* WireListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireListView.swift; sourceTree = "<group>"; };
 		53EC3B2F2BDFE697008D6927 /* WireSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireSummary.swift; sourceTree = "<group>"; };
 		53EC3B312BDFEE45008D6927 /* WireSummaryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WireSummaryStore.swift; sourceTree = "<group>"; };
@@ -75,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53224AFF2BE4C52F009B3945 /* PreviewSnapshots in Frameworks */,
 				53299D502BDE724800417F6D /* MenuBarExtraAccess in Frameworks */,
 				53299D4D2BDE6C6D00417F6D /* HotKey in Frameworks */,
 			);
@@ -84,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53224B012BE4C52F009B3945 /* PreviewSnapshotsTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,16 +118,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		535A82BB2BE4246400EF8AC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5367E7F12BD409D300151171 = {
 			isa = PBXGroup;
 			children = (
-				5367E82B2BD40C0700151171 /* README.md */,
 				5367E82A2BD40BC300151171 /* .gitignore */,
 				537EDEDD2BDD34C9004F6F9E /* .swift-format */,
+				535A82BB2BE4246400EF8AC2 /* Frameworks */,
+				5367E7FB2BD409D300151171 /* Products */,
+				5367E82B2BD40C0700151171 /* README.md */,
 				5367E7FC2BD409D300151171 /* YrtOS */,
 				5367E8102BD409D400151171 /* YrtOSTests */,
 				5367E81A2BD409D400151171 /* YrtOSUITests */,
-				5367E7FB2BD409D300151171 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,12 +152,13 @@
 		5367E7FC2BD409D300151171 /* YrtOS */ = {
 			isa = PBXGroup;
 			children = (
-				53EC3B2E2BDFE67E008D6927 /* Domain */,
-				53D9678D2BD7C12D00CC3D2A /* View */,
-				5367E7FD2BD409D300151171 /* YrtOSApp.swift */,
 				5367E8032BD409D400151171 /* Assets.xcassets */,
-				5367E8082BD409D400151171 /* YrtOS.entitlements */,
+				53EC3B2E2BDFE67E008D6927 /* Domain */,
 				5367E8052BD409D400151171 /* Preview Content */,
+				53D9678D2BD7C12D00CC3D2A /* View */,
+				5367E8082BD409D400151171 /* YrtOS.entitlements */,
+				5367E7FD2BD409D300151171 /* YrtOSApp.swift */,
+				535A82BE2BE42B7700EF8AC2 /* YrtOSDebug.entitlements */,
 			);
 			path = YrtOS;
 			sourceTree = "<group>";
@@ -153,7 +174,11 @@
 		5367E8102BD409D400151171 /* YrtOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				5367E8112BD409D400151171 /* YrtOSTests.swift */,
+				533B8F332BE3E8030088881C /* ControlBarViewTest.swift */,
+				53EB9A932BE4CD4B00F95118 /* SnapshotUtils.swift */,
+				53EB9A952BE4D75600F95118 /* WireListItemViewTest.swift */,
+				53EB9A972BE4DE7F00F95118 /* WireListViewTest.swift */,
+				53EB9A992BE4DFC900F95118 /* ContentViewTest.swift */,
 			);
 			path = YrtOSTests;
 			sourceTree = "<group>";
@@ -232,6 +257,7 @@
 			packageProductDependencies = (
 				53299D4C2BDE6C6D00417F6D /* HotKey */,
 				53299D4F2BDE724800417F6D /* MenuBarExtraAccess */,
+				53224AFE2BE4C52F009B3945 /* PreviewSnapshots */,
 			);
 			productName = YrtOS;
 			productReference = 5367E7FA2BD409D300151171 /* YrtOS.app */;
@@ -251,6 +277,9 @@
 				5367E80F2BD409D400151171 /* PBXTargetDependency */,
 			);
 			name = YrtOSTests;
+			packageProductDependencies = (
+				53224B002BE4C52F009B3945 /* PreviewSnapshotsTesting */,
+			);
 			productName = YrtOSTests;
 			productReference = 5367E80D2BD409D400151171 /* YrtOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -269,6 +298,8 @@
 				5367E8192BD409D400151171 /* PBXTargetDependency */,
 			);
 			name = YrtOSUITests;
+			packageProductDependencies = (
+			);
 			productName = YrtOSUITests;
 			productReference = 5367E8172BD409D400151171 /* YrtOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -308,6 +339,7 @@
 			packageReferences = (
 				53299D4B2BDE6C6D00417F6D /* XCRemoteSwiftPackageReference "HotKey" */,
 				53299D4E2BDE724800417F6D /* XCRemoteSwiftPackageReference "MenuBarExtraAccess" */,
+				53224AFD2BE4C52F009B3945 /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */,
 			);
 			productRefGroup = 5367E7FB2BD409D300151171 /* Products */;
 			projectDirPath = "";
@@ -326,7 +358,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5367E8072BD409D400151171 /* Preview Assets.xcassets in Resources */,
-				537EDEDE2BDD34C9004F6F9E /* .swift-format in Resources */,
 				5367E8042BD409D400151171 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +400,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5367E8122BD409D400151171 /* YrtOSTests.swift in Sources */,
+				53EB9A9A2BE4DFC900F95118 /* ContentViewTest.swift in Sources */,
+				533B8F342BE3E8030088881C /* ControlBarViewTest.swift in Sources */,
+				53EB9A962BE4D75600F95118 /* WireListItemViewTest.swift in Sources */,
+				53EB9A942BE4CD4B00F95118 /* SnapshotUtils.swift in Sources */,
+				53EB9A982BE4DE7F00F95118 /* WireListViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +557,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = YrtOS/YrtOS.entitlements;
+				CODE_SIGN_ENTITLEMENTS = YrtOS/YrtOSDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -683,6 +718,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		53224AFD2BE4C52F009B3945 /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/doordash-oss/swiftui-preview-snapshots";
+			requirement = {
+				kind = exactVersion;
+				version = 1.1.1;
+			};
+		};
 		53299D4B2BDE6C6D00417F6D /* XCRemoteSwiftPackageReference "HotKey" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/soffes/HotKey";
@@ -702,6 +745,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		53224AFE2BE4C52F009B3945 /* PreviewSnapshots */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53224AFD2BE4C52F009B3945 /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
+			productName = PreviewSnapshots;
+		};
+		53224B002BE4C52F009B3945 /* PreviewSnapshotsTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53224AFD2BE4C52F009B3945 /* XCRemoteSwiftPackageReference "swiftui-preview-snapshots" */;
+			productName = PreviewSnapshotsTesting;
+		};
 		53299D4C2BDE6C6D00417F6D /* HotKey */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 53299D4B2BDE6C6D00417F6D /* XCRemoteSwiftPackageReference "HotKey" */;

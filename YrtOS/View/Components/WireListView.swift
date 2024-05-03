@@ -5,6 +5,7 @@
 //  Created by Lorenz Simon on 29.04.24.
 //
 
+import PreviewSnapshots
 import SwiftUI
 
 struct WireListView: View {
@@ -14,8 +15,8 @@ struct WireListView: View {
         VStack(spacing: 10) {
             if wireStore.connectedWires.count > 0 {
                 connected
+                Divider()
             }
-            Divider()
             available
         }
     }
@@ -73,4 +74,33 @@ extension WireSummary {
     ScrollView {
         WireListView().padding()
     }.frame(width: 350, height: 500)
+}
+
+struct WireListView_Previews: PreviewProvider {
+    static var previews: some View {
+        snapshots.previews
+    }
+    
+    static var snapshots: PreviewSnapshots<WireSummaryStore> {
+        let connected = WireSummaryStore()
+        let disconnected = WireSummaryStore(connectedWires: [])
+        
+        return PreviewSnapshots(
+            configurations: [
+                .init(
+                    name: "Connected",
+                    state: connected
+                ),
+                .init(
+                    name: "Disconnected",
+                    state: disconnected
+                )
+            ],
+            configure: { wireStore in
+                ScrollView {
+                    WireListView(wireStore: wireStore).padding()
+                }.frame(width: 350, height: 500)
+            }
+        )
+    }
 }

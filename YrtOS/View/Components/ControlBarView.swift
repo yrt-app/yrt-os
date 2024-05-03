@@ -5,6 +5,7 @@
 //  Created by Lorenz Simon on 23.04.24.
 //
 
+import PreviewSnapshots
 import SwiftUI
 
 struct ControlBarView: View {
@@ -83,13 +84,13 @@ struct ControlBarView: View {
                 .scaleEffect(showSearch ? 0.7 : 1)
                 .frame(height: 22)
         }
-        .accessibilityIdentifier(AID.SEARCH_SHOW_BUTTON)
+        .accessibilityIdentifier(AID.searchShowButton)
         .keyboardShortcut("k")
         .disabled(showSearch)
 
         if showSearch {
             TextField("Search", text: $searchText)
-                .accessibilityIdentifier(AID.SEARCH_TEXT_FIELD)
+                .accessibilityIdentifier(AID.searchTextField)
                 .textFieldStyle(.plain)
                 .focused($searchFocus)
                 .onSubmit {
@@ -105,7 +106,7 @@ struct ControlBarView: View {
             } label: {
                 Image(systemName: "xmark")
             }
-            .accessibilityIdentifier(AID.SEARCH_HIDE_BUTTON)
+            .accessibilityIdentifier(AID.searchHideButton)
             .keyboardShortcut(.cancelAction)
             .onAppear {
                 searchFocus = true
@@ -148,4 +149,24 @@ struct ControlBarView: View {
     ControlBarView()
         .padding()
         .frame(width: 350)
+}
+
+struct ContentBarView_Previews: PreviewProvider {
+    static var previews: some View {
+        snapshots.previews
+    }
+    
+    static var snapshots: PreviewSnapshots<Bool> {
+        PreviewSnapshots(
+            configurations: [
+                .init(name: "Hide Search", state: false),
+                .init(name: "Show Search", state: true),
+            ],
+            configure: { showSearch in
+                ControlBarView(showSearch: showSearch)
+                    .padding()
+                    .frame(width: 350)
+            }
+        )
+    }
 }

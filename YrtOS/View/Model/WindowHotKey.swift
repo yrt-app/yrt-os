@@ -11,7 +11,7 @@ import HotKey
 
 class WindowHotKey: ObservableObject {
     let hotKey: HotKey
-    
+
     @Published var showWindow = false
 
     init(key: Key, modifiers: NSEvent.ModifierFlags) {

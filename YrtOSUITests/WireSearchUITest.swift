@@ -20,17 +20,17 @@ final class WireSearchUITest: XCTestCase {
     }
 
     func testTransitionToSearchField() throws {
-        let searchButton = app.buttons[AID.SEARCH_SHOW_BUTTON]
+        let searchButton = app.buttons[AID.searchShowButton]
         XCTAssert(searchButton.exists)
         XCTAssert(searchButton.isEnabled)
         searchButton.click()
 
-        let textField = app.textFields[AID.SEARCH_TEXT_FIELD]
+        let textField = app.textFields[AID.searchTextField]
         XCTAssert(textField.exists)
         XCTAssert(!searchButton.isEnabled)
         textField.typeText("test")
 
-        let closeButton = app.buttons[AID.SEARCH_HIDE_BUTTON]
+        let closeButton = app.buttons[AID.searchHideButton]
         XCTAssert(closeButton.exists)
         closeButton.click()
 

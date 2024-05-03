@@ -1,5 +1,5 @@
 {
-  "originHash" : "919fda6b2774e765f11ca4598fdf2ff5b1228335c11aef38c0c0aede6eeb7105",
+  "originHash" : "28188e5be7caa94ac6cb14fa0cd3b24834d1e79b70117e15077921fcfd8f3a6a",
   "pins" : [
     {
       "identity" : "hotkey",
@@ -17,6 +17,33 @@
       "state" : {
         "revision" : "f5896b47e15e114975897354c7e1082c51a2bffd",
         "version" : "1.0.5"
+      }
+    },
+    {
+      "identity" : "swift-snapshot-testing",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pointfreeco/swift-snapshot-testing",
+      "state" : {
+        "revision" : "625ccca8570773dd84a34ee51a81aa2bc5a4f97a",
+        "version" : "1.16.0"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax",
+      "state" : {
+        "revision" : "fa8f95c2d536d6620cc2f504ebe8a6167c9fc2dd",
+        "version" : "510.0.1"
+      }
+    },
+    {
+      "identity" : "swiftui-preview-snapshots",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/doordash-oss/swiftui-preview-snapshots",
+      "state" : {
+        "revision" : "36cd3662a48ef75cc13eae182d468178279a0445",
+        "version" : "1.1.1"
       }
     }
   ],

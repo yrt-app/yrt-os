@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct AccessibilityIdentifier {
-    struct ControlBarView {
-        static let SEARCH_SHOW_BUTTON = "\(Self.self)ButtonSearchShow"
-        static let SEARCH_HIDE_BUTTON = "\(Self.self)ButtonSearchHide"
-        static let SEARCH_TEXT_FIELD = "\(Self.self)TextFieldSearch"
+enum AccessibilityIdentifier {
+    enum ControlBarView {
+        static let searchShowButton = "\(Self.self)ButtonSearchShow"
+        static let searchHideButton = "\(Self.self)ButtonSearchHide"
+        static let searchTextField = "\(Self.self)TextFieldSearch"
     }
 }

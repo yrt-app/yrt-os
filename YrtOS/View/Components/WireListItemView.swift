@@ -5,11 +5,12 @@
 //  Created by Lorenz Simon on 28.04.24.
 //
 
+import PreviewSnapshots
 import SwiftUI
 
 struct WireListItemView: View {
     let wireSummary: WireSummary
-    
+
     @State var showControls = false
 
     var body: some View {
@@ -108,4 +109,71 @@ struct WireListItemView: View {
     return WireListItemView(wireSummary: wireSummary)
         .padding()
         .frame(width: 350)
+}
+
+struct WireListItemView_Previews: PreviewProvider {
+    static var previews: some View {
+        snapshots.previews
+    }
+    
+    static var snapshots: PreviewSnapshots<PreviewState> {
+        let shortWireSummary = WireSummary(
+            id: UUID().uuidString,
+            emoji: "🤙",
+            description: "Team X Hangout",
+            onlineCount: 4
+        )
+        let longWireSummary = WireSummary(
+            id: UUID().uuidString,
+            emoji: "🤙",
+            description: "Team X Hangout With a Long Description",
+            onlineCount: 4
+        )
+        
+        return PreviewSnapshots(
+            configurations: [
+                .init(
+                    name: "Hide Controls Short Summary",
+                    state: PreviewState(
+                        wireSummary: shortWireSummary,
+                        showControls: false
+                    )
+                ),
+                .init(
+                    name: "Show Controls Short Summary",
+                    state: PreviewState(
+                        wireSummary: shortWireSummary,
+                        showControls: true
+                    )
+                ),
+                .init(
+                    name: "Hide Controls Long Summary",
+                    state: PreviewState(
+                        wireSummary: longWireSummary,
+                        showControls: false
+                    )
+                ),
+                .init(
+                    name: "Show Controls Long Summary",
+                    state: PreviewState(
+                        wireSummary: longWireSummary,
+                        showControls: true
+                    )
+                ),
+            ],
+            configure: { state in
+                WireListItemView(
+                    wireSummary: state.wireSummary,
+                    showControls: state.showControls
+                )
+                .padding()
+                .frame(width: 350)
+            }
+        )
+    }
+    
+    struct PreviewState {
+        let wireSummary: WireSummary
+        let showControls: Bool
+    }
 }

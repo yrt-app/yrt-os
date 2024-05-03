@@ -73,4 +73,14 @@ class WireSummaryStore: ObservableObject {
             onlineCount: 0
         ),
     ]
+    
+    init(connectedWires: [WireSummary]? = nil, availableWires: [WireSummary]? = nil) {
+        if let connectedWires {
+            self.connectedWires = connectedWires
+        }
+        if let availableWires {
+            self.availableWires = availableWires
+
+        }
+    }
 }
